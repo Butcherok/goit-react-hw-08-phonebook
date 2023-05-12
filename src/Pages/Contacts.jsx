@@ -2,10 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Box } from '@mui/material';
 import { fetchContacts, selectError, selectIsLoading } from '../redux/index';
-import { Loader } from '//src/components/Loader/Loader';
+import { Loader } from '../components/Loader/Loader';
 import ContactForm from 'components/contactForm/contactForm';
-import { Filter } from '//src/components/Filter/Filter';
-import { MyContactList } from '//src/components/ContactList/ContactList';
+import { Filter } from '../components/Filter/Filter';
+import { MyContactList } from '../components/ContactList/ContactList';
 
 const Contacts = () => {
 	const isLoading = useSelector(selectIsLoading);
