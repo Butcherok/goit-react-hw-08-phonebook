@@ -1,16 +1,35 @@
 import PropTypes from 'prop-types';
-import { ContactName, ContactNumber } from './Contact.styled';
+import { useDeleteContactMutation } from 'redux/index';
 
-export default function ContactItem({ name, phone }) {
-	return (
-		<>
-			<ContactName>{name}: </ContactName>
-			<ContactNumber>{phone}</ContactNumber>
-		</>
-	);
+export default function ContactItem({ name, phone, id }) {
+  const [deleteContacts, { isLoading }] = useDeleteContactMutation();
+  // const { setContactId, setShowEditContact } = useShowModalContext();
+
+  return (
+    <>
+      <p>{name}: </p>
+      <p>{phone}</p>
+      <button
+        type="button"
+        onClick={() => {
+          // setContactId(id);
+          // setShowEditContact(true);
+        }}
+      >
+        edit
+      </button>
+      <button
+        type="button"
+          onClick={() => deleteContacts(id)}
+          disabled={isLoading}
+      >
+        delete
+      </button>
+    </>
+  );
 }
 
 ContactItem.propTypes = {
-	name: PropTypes.string.isRequired,
-	phone: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
 };

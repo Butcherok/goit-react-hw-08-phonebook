@@ -1,36 +1,51 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import { Box } from '@mui/material';
-import {   selectIsLoading } from 'redux/index';
-import { Loader } from 'components/Loader/Loader';
+// import { Loader } from 'components/Loader/Loader';
 import ContactForm from 'components/contactForm/contactForm';
 import { Filter } from 'components/Filter/Filter';
-import { MyContactList } from 'components/ContactList/ContactList';
+// import { useShowModalContext } from 'components/modal/modal';
 
 const Contacts = () => {
-	const isLoading = useSelector(selectIsLoading);
-	const error = useSelector();
-	const dispatch = useDispatch();
+  // const [errors, setErrors] = useState(null)
+  // const { data, isLoading, isError, isSuccess, error } =
+    // useFetchContactsQuery();
 
-	useEffect(() => {
-		dispatch();
-		if (error) {
-			alert.error(error);
-		}
-	}, [dispatch, error]);
+  // const {
+  //   showAddContact,
+  //   setShowAddContact,
+  //   showEditContact,
+  //   setShowEditContact,
+  //   contactId,
+  // } = useShowModalContext();
 
-	return (
-		<Box>
-			{isLoading && <Loader />}
-			<section>
-				<h1>Phonebook</h1>
-				<ContactForm />
-				<h2>Contacts</h2>
-				<Filter />
-				{!isLoading && !error && <MyContactList />}
-			</section>
-		</Box>
-	);
+  // useEffect(() => {
+  //   if (isError && error.status !== 401)
+  //     setErrors(`Something wrong. Try to reload your page! ${error.status}`);
+  //     // toast.error(`Something wrong. Try to reload your page! ${error.status}`);
+  // }, [error, isError]);
+
+  // const contact = useMemo(() => {
+  //   if (isSuccess) {
+  //     return data.find(contact => contact.id === contactId);
+  //   }
+  // }, [contactId, data, isSuccess]);
+
+  return (
+    <Box>
+      {/* {isLoading && <Loader />} */}
+
+      <section>
+        <h1>Phonebook</h1>
+        <ContactForm />
+        <h2>Contacts</h2>
+        <Filter />
+        <h2>Edit</h2>
+
+        {/* {isSuccess && <MyContactList contacts={data} />} */}
+
+        {/* {!isLoading && !error && <MyContactList />} */}
+      </section>
+    </Box>
+  );
 };
 
 export default Contacts;
