@@ -1,6 +1,14 @@
-export { initialState } from './initialState';
-export { contactReducer } from './contactSlice';
-export { filterList, filterReducer } from './filterSlice';
-export * from './thunks'
+export {
+  contactsApi,
+  useFetchContactsQuery,
+  useAddContactMutation,
+  useEditContactMutation,
+  useDeleteContactMutation,
+} from './contacts/operations';
+export { setFilter } from './filterSlice';
+// export { setTheme } from './themeSlice';
+
 export * from './selectors';
-export * from './contactsApi';
+
+export * from './auth/operations';
+export { signUp, signIn, logOut, refresh } from './auth/slice';

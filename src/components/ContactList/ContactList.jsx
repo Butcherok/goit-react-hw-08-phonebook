@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, selectFiltredContacts } from '../../redux/index';
+import {  } from '../../redux/index';
 import ContactItem from '../Contact/Contact';
 import {
 	ContactDeleteBtn,
@@ -8,7 +8,7 @@ import {
 } from './ContactList.styled';
 
 export const MyContactList = () => {
-	const filtredContacts = useSelector(selectFiltredContacts);
+	const filtredContacts = useSelector();
 	const dispatch = useDispatch();
 
 	return (
@@ -19,7 +19,7 @@ export const MyContactList = () => {
 						<ContactItem name={name} phone={phone} />
 						<ContactDeleteBtn
 							type="button"
-							onClick={() => dispatch(deleteContact(id))}
+							onClick={() => dispatch()}
 						>
 							Delete
 						</ContactDeleteBtn>

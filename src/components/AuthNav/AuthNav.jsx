@@ -5,10 +5,10 @@ export const AuthNav = () => {
     <>
       <ul>
         <li>
-          <NavLink to={'/Register'}>Sign Up</NavLink>
+          <NavLink to={'/Register'}>Sign up</NavLink>
         </li>
         <li>
-          <NavLink to={'/Login'}>Log In</NavLink>
+          <NavLink to={'/Login'}>Sign in</NavLink>
         </li>
       </ul>
     </>
