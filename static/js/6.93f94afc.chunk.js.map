@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/6.93f94afc.chunk.js","mappings":"0JAUA,UAVa,WACZ,OACC,+BACC,yBACC,6DAIH,C","sources":["Pages/Home.jsx"],"sourcesContent":["const Home = () => {\n\treturn (\n\t\t<>\n\t\t\t<h1>\n\t\t\t\t<span>Hello! i am your PhoneBook.</span>\n\t\t\t</h1>\n\t\t</>\n\t);\n};\n\nexport default Home;\n"],"names":[],"sourceRoot":""}
