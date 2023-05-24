@@ -1,4 +1,3 @@
-import {   } from '../../redux/index';
 import {
   AddContactBtn,
   NameInput,

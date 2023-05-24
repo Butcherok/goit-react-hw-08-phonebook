@@ -1,55 +1,40 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-export const contactsApi = createApi({
-  reducerPath: 'contacts',
-  baseQuery: fetchBaseQuery({
-    baseUrl: 'https://connections-api.herokuapp.com',
-    prepareHeaders: (headers, { getState }) => {
-      const token = getState().auth.token;
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
-      if (token) {
-        headers.set('Authorization', `Bearer ${token}`);
-      }
+export const fetchContacts = createAsyncThunk(
+  'contacts/fetchContacts',
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get('/contacts');
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
-      return headers;
-    },
-  }),
-  tagTypes: ['Contacts'],
-  endpoints: build => ({
-    fetchContacts: build.query({
-      query: () => '/contacts',
-      providesTags: result =>
-        result
-          ? [
-              ...result.map(({ id }) => ({ type: 'Contacts', id })),
-              { type: 'Contacts', id: 'LIST' },
-            ]
-          : [{ type: 'Contacts', id: 'LIST' }],
-    }),
-    addContact: build.mutation({
-      query: contact => ({ url: '/contacts', method: 'POST', body: contact }),
-      invalidatesTags: [{ type: 'Contacts', id: 'LIST' }],
-    }),
-    editContact: build.mutation({
-      query: ({ id, name, number }) => {
-        return {
-          url: `/contacts/${id}`,
-          method: 'PATCH',
-          body: { name, number },
-        };
-      },
-      invalidatesTags: [{ type: 'Contacts', id: 'LIST' }],
-    }),
-    deleteContact: build.mutation({
-      query: id => ({ url: `/contacts/${id}`, method: 'DELETE' }),
-      invalidatesTags: (result, error, id) => [{ type: 'Contacts', id }],
-    }),
-  }),
-});
+export const addContact = createAsyncThunk(
+  'contacts/addContact',
+  async ({ name, number }, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/contacts', { name, number });
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
-export const {
-  useFetchContactsQuery,
-  useAddContactMutation,
-  useEditContactMutation,
-  useDeleteContactMutation,
-} = contactsApi;
+export const deleteContact = createAsyncThunk(
+  'contacts/deleteContact',
+  async (contactId, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.delete(`/contacts/${contactId}`);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

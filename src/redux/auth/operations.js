@@ -1,43 +1,65 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import axios from 'axios';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
-export const authApi = createApi({
-  reducerPath: 'authentification',
-  baseQuery: fetchBaseQuery({
-    baseUrl: 'https://connections-api.herokuapp.com',
-    prepareHeaders: (headers, { getState }) => {
-      const token = getState().auth.token;
-      if (token) {
-        headers.set('Authorization', `Bearer ${token}`);
-      }
-      return headers;
-    },
-  }),
-  endpoints: build => ({
-    signUp: build.mutation({
-      query: user => {
-        return { url: '/users/signup', method: 'POST', body: user };
-      },
-    }),
+const setAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
 
-    signIn: build.mutation({
-      query: user => {
-        return { url: '/users/login', method: 'POST', body: user };
-      },
-    }),
+const clearAuthHeader = () => {
+  axios.defaults.headers.common.Authorization = '';
+};
 
-    logOut: build.mutation({
-      query: () => {
-        return { url: '/users/logout', method: 'POST' };
-      },
-    }),
-    current: build.query({
-      query: () => '/users/current',
-    }),
-  }),
+export const register = createAsyncThunk(
+  'auth/register',
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.post('/users/signup', credentials);
+      setAuthHeader(data.token);
+
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logIn = createAsyncThunk(
+  'auth/login',
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.post('users/login', credentials);
+      setAuthHeader(data.token);
+
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
+  try {
+    await axios.post('users/logout');
+
+    clearAuthHeader();
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
 });
-export const {
-  useSignUpMutation,
-  useSignInMutation,
-  useLogOutMutation,
-  useCurrentQuery,
-} = authApi;
+
+export const refreshUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const { token } = thunkAPI.getState().auth;
+    if (!token) return thunkAPI.rejectWithValue('Oops');
+
+    setAuthHeader(token);
+
+    try {
+      const { data } = await axios.get('users/current');
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

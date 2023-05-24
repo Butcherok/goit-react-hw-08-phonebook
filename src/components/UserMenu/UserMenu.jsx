@@ -1,27 +1,23 @@
-import { Box } from '@mui/material';
-import { useUser } from 'hooks';
+import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
-import { useLogOutMutation, logOut } from 'redux/index';
+import { logOut } from 'redux/auth/operations';
+import { useMediaQuery } from 'hooks/useMediaQuery';
+import { UserWrapper, Paragraph, UserName, BtnLogOut } from './UserMenu.styled';
+import { FaSignOutAlt } from 'react-icons/fa';
 
 export const UserMenu = () => {
-  const { user } = useUser();
-  const [signOut] = useLogOutMutation();
   const dispatch = useDispatch();
+  const { user } = useAuth();
+  const isPageWide = useMediaQuery('(min-width: 768px)');
 
   return (
-    <>
-      <Box>
-        <p>Welcome, {user.name}</p>
-        <button
-          type="button"
-          onClick={async () => {
-            await signOut();
-            dispatch(logOut());
-          }}
-        >
-          Logout
-        </button>
-      </Box>
-    </>
+    <UserWrapper>
+      <Paragraph>
+        Welcome, <UserName>{user.name}</UserName>
+      </Paragraph>
+      <BtnLogOut type="button" onClick={() => dispatch(logOut())}>
+        {isPageWide ? 'Sign Out' : <FaSignOutAlt />}
+      </BtnLogOut>
+    </UserWrapper>
   );
 };
