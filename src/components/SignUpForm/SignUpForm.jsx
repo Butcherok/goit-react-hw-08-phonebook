@@ -14,8 +14,9 @@ import {
   IconShown,
   PassWrapper,
   ShowPassBtn,
+  PromtText,
+  PromtLink,
 } from './SignUpForm.styled';
-import { Link } from 'react-router-dom';
 
 const initialValues = {
   username: '',
@@ -95,8 +96,10 @@ export const RegisterForm = () => {
             <ErrorMsg name="password" component="span" />
           </InputWrapper>
           <Btn type="submit">Sign up</Btn>
-          <p>Already have an account?</p>
-          <Link to={'/Login'}> Login </Link>
+          <PromtText>
+            Already have an account?
+            <PromtLink to={'/Login'}> Login </PromtLink>
+          </PromtText>
         </FormContainer>
       )}
     </Formik>

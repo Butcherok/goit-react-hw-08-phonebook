@@ -24,7 +24,8 @@ export const NameInput = styled.input`
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 18px;
-  border: 1px solid lightblue;
+  border: 2px solid lightblue;
+  outline: none;
 `;
 
 export const NumberLabel = styled.label`
@@ -35,7 +36,8 @@ export const NumberInput = styled.input`
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 18px;
-  border: 1px solid lightblue;
+  border: 2px solid lightblue;
+  outline: none;
 `;
 
 export const AddContactBtn = styled.button`
@@ -45,15 +47,19 @@ export const AddContactBtn = styled.button`
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-  &:hover {
+
+  &:hover,
+  &:focus {
     scale: 1.05;
     transition: all 0.3s ease-in-out;
+    outline: none;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   &:active {
     background-color: lightgreen;
     transform: scale(0.95);
     transition: all 0.1s ease-in-out;
+    border: 2px solid lightgreen;
   }
   &:disabled {
     background-color: lightcoral;

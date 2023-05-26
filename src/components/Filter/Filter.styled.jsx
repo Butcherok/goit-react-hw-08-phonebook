@@ -22,5 +22,6 @@ export const FilterInput = styled.input`
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 18px;
-  border: 1px solid lightblue;
+  border: 2px solid lightblue;
+  outline: none;
 `;

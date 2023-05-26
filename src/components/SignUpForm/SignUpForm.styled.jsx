@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Form, Field, ErrorMessage } from 'formik';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export const FormContainer = styled(Form)`
   display: flex;
@@ -13,7 +14,7 @@ export const Title = styled.h2`
 
   font-weight: 500;
   font-size: 24px;
-  color: #fff;
+  color: #282828;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
@@ -45,7 +46,7 @@ export const Input = styled(Field)`
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 
   background-color: white;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 2px solid lightblue;
   border-radius: 10px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 
@@ -54,13 +55,12 @@ export const Input = styled(Field)`
   outline: none;
 
   &:not(:placeholder-shown)[data-error='false'] {
-    color: #fff;
+    color: #282828;
     border: 1px solid rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, 0.1);
   }
 
   &[data-error='true'] {
-    color: rgba(255, 255, 255, 1);
+    color: #282828;
     border: 1px solid rgba(227, 67, 67, 0.7);
     background-color: rgba(255, 255, 255, 0.1);
   }
@@ -71,9 +71,9 @@ export const Input = styled(Field)`
 
   &:hover,
   &:focus {
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, 0.1);
+    color: #282828;
+    border: 2px solid lightblue;
+    /* background-color: rgba(255, 255, 255, 0.1); */
   }
 `;
 
@@ -82,12 +82,12 @@ export const Btn = styled.button`
 
   font-weight: 700;
   font-size: 24px;
-  color: rgba(255, 255, 255, 0.7);
+  color: 282828;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 
-  background-color: transparent;
+  background-color: lightblue;
 
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 
@@ -96,9 +96,42 @@ export const Btn = styled.button`
   cursor: pointer;
 
   :hover {
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, 0.2);
+    scale: 1.05;
+    border: 2px solid rgba(255, 255, 255, 1);
+  }
+  &:active {
+    background-color: lightgreen;
+    transform: scale(0.95);
+    transition: all 0.1s ease-in-out;
+    border: 2px solid lightgreen;
+  }
+`;
+
+export const PromtText = styled.span`
+  display: flex;
+  margin-top: 15px;
+  gap: 10px;
+
+  font-size: 18px;
+  color: #282828;
+`;
+
+export const PromtLink = styled(Link)`
+  font-weight: 500;
+  font-size: 18px;
+  color: #282828;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px hsl(195, 53%, 79%);
+
+  transition: all 250ms ease-in-out;
+
+  :hover,
+  :focus {
+    color: lightgreen;
+  }
+
+  &.active {
+    color: lightgreen;
   }
 `;
 
