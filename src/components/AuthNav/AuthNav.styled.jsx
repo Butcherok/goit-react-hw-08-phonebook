@@ -12,9 +12,9 @@ export const AuthItem = styled(NavLink)`
 
   font-weight: 500;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #282828;
   text-decoration: none;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 1px 1px hsl(195, 53%, 79%);
 
   transition: all 250ms ease-in-out;
 
@@ -30,7 +30,7 @@ export const AuthItem = styled(NavLink)`
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 300ms ease-in-out;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px hsl(195, 53%, 79%);
 
     background-color: #fff;
     border-radius: 5px;
@@ -44,11 +44,11 @@ export const AuthItem = styled(NavLink)`
 
   :hover,
   :focus {
-    color: #fff;
+    color: lightgreen;
   }
 
   &.active {
-    color: #fff;
+    color: lightgreen;
 
     &::after {
       transform: scaleX(1);

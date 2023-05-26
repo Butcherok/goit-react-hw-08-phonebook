@@ -9,12 +9,12 @@ export const UserWrapper = styled.div`
 
 export const Paragraph = styled.p`
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #282828;
 `;
 
 export const UserName = styled.span`
   font-weight: 500;
-  color: #fff;
+  color: #282828;
 `;
 
 export const BtnLogOut = styled.button`
@@ -22,7 +22,7 @@ export const BtnLogOut = styled.button`
 
   font-size: 18px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
+  color: #282828;
 
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@ export const BtnLogOut = styled.button`
 
   background-color: transparent;
 
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid #282828;
   border-radius: 10px;
 
   transition: all 250ms ease-in-out;
@@ -42,8 +42,8 @@ export const BtnLogOut = styled.button`
   }
 
   :hover {
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 1);
+    color: lightgreen;
+    border: 1px solid #90ee90;
     background-color: rgba(255, 255, 255, 0.1);
   }
 `;

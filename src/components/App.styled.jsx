@@ -25,7 +25,7 @@ export const Title = styled.h1`
 
   font-size: 38px;
   font-weight: 700;
-  color: #fff;
+  color: #282828;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 
   @media ${device.tablet} {
@@ -38,7 +38,7 @@ export const Subtitle = styled.h2`
 
   font-size: 32px;
   font-weight: 500;
-  color: #fff;
+  color: #282828;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
