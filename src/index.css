@@ -56,4 +56,5 @@ img {
 #root {
   padding: 20px 0;
   flex: 1;
+  background-color: grey;
 }

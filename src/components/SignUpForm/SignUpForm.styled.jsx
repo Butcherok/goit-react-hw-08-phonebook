@@ -26,13 +26,13 @@ export const InputWrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   gap: 5px;
 `;
 
 export const Label = styled.label`
   font-size: 22px;
-  color: #fff;
+  color: #282828;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
@@ -44,7 +44,7 @@ export const Input = styled(Field)`
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 
-  background-color: transparent;
+  background-color: white;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
