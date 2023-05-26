@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.56827173.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.28a0053c.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.aab1c656.js",
     "static/js/6.182bf3f0.chunk.js": "/goit-react-hw-08-phonebook/static/js/6.182bf3f0.chunk.js",
-    "static/js/418.6e58bd20.chunk.js": "/goit-react-hw-08-phonebook/static/js/418.6e58bd20.chunk.js",
+    "static/js/237.4a84fae4.chunk.js": "/goit-react-hw-08-phonebook/static/js/237.4a84fae4.chunk.js",
     "static/js/587.492de7dc.chunk.js": "/goit-react-hw-08-phonebook/static/js/587.492de7dc.chunk.js",
     "static/js/44.eac8027e.chunk.js": "/goit-react-hw-08-phonebook/static/js/44.eac8027e.chunk.js",
     "static/js/29.8a3630d8.chunk.js": "/goit-react-hw-08-phonebook/static/js/29.8a3630d8.chunk.js",
     "static/js/705.a9d6fb25.chunk.js": "/goit-react-hw-08-phonebook/static/js/705.a9d6fb25.chunk.js",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.56827173.css.map": "/goit-react-hw-08-phonebook/static/css/main.56827173.css.map",
-    "main.28a0053c.js.map": "/goit-react-hw-08-phonebook/static/js/main.28a0053c.js.map",
+    "main.aab1c656.js.map": "/goit-react-hw-08-phonebook/static/js/main.aab1c656.js.map",
     "6.182bf3f0.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/6.182bf3f0.chunk.js.map",
-    "418.6e58bd20.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/418.6e58bd20.chunk.js.map",
+    "237.4a84fae4.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/237.4a84fae4.chunk.js.map",
     "587.492de7dc.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/587.492de7dc.chunk.js.map",
     "44.eac8027e.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/44.eac8027e.chunk.js.map",
     "29.8a3630d8.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/29.8a3630d8.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.56827173.css",
-    "static/js/main.28a0053c.js"
+    "static/js/main.aab1c656.js"
   ]
 }
