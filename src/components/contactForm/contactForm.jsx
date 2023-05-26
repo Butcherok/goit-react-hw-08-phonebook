@@ -1,3 +1,4 @@
+import { addContact } from 'redux/contacts/operations';
 import {
   AddContactBtn,
   NameInput,
@@ -6,30 +7,34 @@ import {
   NumberInput,
   NumberLabel,
 } from './contactForm.styled';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectContacts } from 'redux/contacts/selectors';
+import { nanoid } from '@reduxjs/toolkit';
 
 export default function ContactForm() {
-  // const contacts = useSelector(selectContacts);
-  // const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
+  const dispatch = useDispatch();
 
   const onSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
-    // const nameContact = form.elements.name.value.trim();
-    // const numberContact = form.elements.number.value.trim();
+    const nameContact = form.elements.name.value.trim();
+    const numberContact = form.elements.number.value.trim();
 
-    // const searchTwins = contacts.some(
-    //   contact =>
-    //     contact.name.toLowerCase() ===
-    //     form.elements.name.value.toLowerCase().trim()
-    // );
+    const searchTwins = contacts.some(
+      contact =>
+        contact.name.toLowerCase() ===
+        form.elements.name.value.toLowerCase().trim()
+    );
 
-    // if (searchTwins) {
-    //   alert(`${form.elements.name.value.trim()} is already in contacts`);
-    //   form.reset();
-    //   return;
-    // }
-    // dispatch(addContact({name: nameContact, phone: numberContact}));
+    if (searchTwins) {
+      alert(`${form.elements.name.value.trim()} is already in contacts`);
+      form.reset();
+      return;
+    }
+    dispatch(
+      addContact({ id: nanoid(), name: nameContact, number: numberContact })
+    );
 
     form.reset();
   };

@@ -1,45 +1,30 @@
 import { Box } from '@mui/material';
 // import { Loader } from 'components/Loader/Loader';
 import ContactForm from 'components/contactForm/contactForm';
+import { MyContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
-// import { useShowModalContext } from 'components/modal/modal';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchContacts } from 'redux/contacts/operations';
 
 const Contacts = () => {
-  // const [errors, setErrors] = useState(null)
-  // const { data, isLoading, isError, isSuccess, error } =
-    // useFetchContactsQuery();
+  const dispatch = useDispatch();
 
-  // const {
-  //   showAddContact,
-  //   setShowAddContact,
-  //   showEditContact,
-  //   setShowEditContact,
-  //   contactId,
-  // } = useShowModalContext();
-
-  // useEffect(() => {
-  //   if (isError && error.status !== 401)
-  //     setErrors(`Something wrong. Try to reload your page! ${error.status}`);
-  //     // toast.error(`Something wrong. Try to reload your page! ${error.status}`);
-  // }, [error, isError]);
-
-  // const contact = useMemo(() => {
-  //   if (isSuccess) {
-  //     return data.find(contact => contact.id === contactId);
-  //   }
-  // }, [contactId, data, isSuccess]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <Box>
       {/* {isLoading && <Loader />} */}
 
       <section>
-        <h1>Phonebook</h1>
+        <h1>Add Contact</h1>
         <ContactForm />
-        <h2>Contacts</h2>
+        <h2>Filter</h2>
         <Filter />
-        <h2>Edit</h2>
-
+        <h2>Your contacts list</h2>
+        <MyContactList />
         {/* {isSuccess && <MyContactList contacts={data} />} */}
 
         {/* {!isLoading && !error && <MyContactList />} */}
