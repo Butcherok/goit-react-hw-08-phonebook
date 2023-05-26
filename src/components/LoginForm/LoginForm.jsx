@@ -10,13 +10,12 @@ import {
   Input,
   Btn,
   ErrorMsg,
-  Text,
   IconHidden,
   IconShown,
   PassWrapper,
   ShowPassBtn,
-} from './LogicForm.styled';
-import { Link } from 'react-router-dom';
+} from './LoginForm.styled';
+import { PromtLink, PromtText } from 'components/SignUpForm/SignUpForm.styled';
 
 const initialValues = {
   email: 'user-mail@domain.com',
@@ -45,7 +44,6 @@ export const LoginForm = () => {
       {({ errors, touched }) => (
         <FormContainer>
           <Title>Sign in to continue</Title>
-          <Text>*you can also use a test credentials</Text>
           <InputWrapper>
             <Label htmlFor="email">Email:</Label>
             <Input
@@ -82,8 +80,10 @@ export const LoginForm = () => {
             <ErrorMsg name="password" component="span" />
           </InputWrapper>
           <Btn type="submit">Sign in</Btn>
-          <p>No account?</p>
-          <Link to={'/Register'}> Register </Link>
+          <PromtText>
+            No account?
+            <PromtLink to={'/Register'}> Register </PromtLink>
+          </PromtText>
         </FormContainer>
       )}
     </Formik>

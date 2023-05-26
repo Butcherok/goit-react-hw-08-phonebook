@@ -1,16 +1,8 @@
+import NoPage from 'components/NotFound/NotFound';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const NotFound = () => {
-  return (
-    <>
-      <section>
-        <span>This page does not exist! Please, go to</span>
-        <Link to={'/'}> Home page </Link>
-        <span>and try again.</span>
-      </section>
-    </>
-  );
+  return <NoPage />
 };
 
 export default NotFound;

@@ -56,16 +56,16 @@ export const Input = styled(Field)`
 
   &:not(:placeholder-shown)[data-error='false'] {
     color: #282828;
-    border: 1px solid rgba(255, 255, 255, 1);
+    border: 2px solid lightblue;
   }
 
   &[data-error='true'] {
     color: #282828;
     border: 1px solid rgba(227, 67, 67, 0.7);
-    background-color: rgba(255, 255, 255, 0.1);
   }
 
   &[type='password'] {
+    color: #282828;
     padding-right: 65px;
   }
 
@@ -73,7 +73,6 @@ export const Input = styled(Field)`
   &:focus {
     color: #282828;
     border: 2px solid lightblue;
-    /* background-color: rgba(255, 255, 255, 0.1); */
   }
 `;
 
@@ -82,7 +81,7 @@ export const Btn = styled.button`
 
   font-weight: 700;
   font-size: 24px;
-  color: 282828;
+  color: #282828;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 
   background-color: lightblue;

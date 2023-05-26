@@ -13,7 +13,7 @@ export const Title = styled.h2`
 
   font-weight: 500;
   font-size: 24px;
-  color: #fff;
+  color: #282828;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
@@ -32,7 +32,7 @@ export const InputWrapper = styled.div`
 
 export const Label = styled.label`
   font-size: 22px;
-  color: #fff;
+  color: #282828;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 `;
 
@@ -44,7 +44,7 @@ export const Input = styled(Field)`
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 
-  background-color: transparent;
+  background-color: white;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -54,26 +54,24 @@ export const Input = styled(Field)`
   outline: none;
 
   &:not(:placeholder-shown)[data-error='false'] {
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, 0.1);
+    color: #282828;
+    border: 2px solid lightblue;
   }
 
   &[data-error='true'] {
-    color: rgba(255, 255, 255, 1);
+    color: #282828;
     border: 1px solid rgba(227, 67, 67, 0.7);
-    background-color: rgba(255, 255, 255, 0.1);
   }
 
   &[type='password'] {
+    color: #282828;
     padding-right: 65px;
   }
 
   &:hover,
   &:focus {
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, 0.1);
+    color: #282828;
+    border: 2px solid lightblue;
   }
 `;
 
@@ -82,12 +80,12 @@ export const Btn = styled.button`
 
   font-weight: 700;
   font-size: 24px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #282828;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 
-  background-color: transparent;
+  background-color: lightblue;
 
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 
@@ -96,9 +94,15 @@ export const Btn = styled.button`
   cursor: pointer;
 
   :hover {
-    color: #fff;
+    scale: 1.05;
+
     border: 1px solid rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, 0.2);
+  }
+  &:active {
+    background-color: lightgreen;
+    transform: scale(0.95);
+    transition: all 0.1s ease-in-out;
+    border: 2px solid lightgreen;
   }
 `;
 
