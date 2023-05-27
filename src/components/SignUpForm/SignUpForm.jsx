@@ -55,6 +55,7 @@ export const RegisterForm = () => {
               id="username"
               autoComplete="off"
               placeholder={' '}
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               data-error={errors.username && touched.username ? true : false}
             />
             <ErrorMsg name="username" component="span" />
@@ -68,6 +69,7 @@ export const RegisterForm = () => {
               id="email"
               autoComplete="off"
               placeholder={' '}
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               data-error={errors.email && touched.email ? true : false}
             />
             <ErrorMsg name="email" component="span" />

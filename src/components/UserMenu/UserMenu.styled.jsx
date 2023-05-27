@@ -42,8 +42,8 @@ export const BtnLogOut = styled.button`
   }
 
   :hover {
-    color: lightgreen;
-    border: 1px solid #90ee90;
+    color: tomato;
+    border: 1px solid tomato;
     background-color: rgba(255, 255, 255, 0.1);
   }
 `;

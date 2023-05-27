@@ -16,7 +16,7 @@ export const UserMenu = () => {
         Welcome, <UserName>{user.name}</UserName>
       </Paragraph>
       <BtnLogOut type="button" onClick={() => dispatch(logOut())}>
-        {isPageWide ? 'Sign Out' : <FaSignOutAlt />}
+        {isPageWide ? 'Log Out' : <FaSignOutAlt />}
       </BtnLogOut>
     </UserWrapper>
   );

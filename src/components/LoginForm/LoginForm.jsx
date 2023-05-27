@@ -66,11 +66,13 @@ export const LoginForm = () => {
                 id="password"
                 autoComplete="off"
                 placeholder={' '}
+                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                 data-error={errors.password && touched.password ? true : false}
               />
 
               <ShowPassBtn
                 type="button"
+                pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                 onClick={togglePassword}
                 data-shown={passwordShown}
               >
