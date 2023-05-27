@@ -18,7 +18,7 @@ export const Header = styled.header`
 
   backdrop-filter: blur(5px);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  
+
   @media ${device.tablet} {
     padding: 20px 40px;
   }

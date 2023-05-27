@@ -25,9 +25,6 @@ const Contacts = () => {
         <Filter />
         <h2>Your contacts list</h2>
         <MyContactList />
-        {/* {isSuccess && <MyContactList contacts={data} />} */}
-
-        {/* {!isLoading && !error && <MyContactList />} */}
       </section>
     </Box>
   );

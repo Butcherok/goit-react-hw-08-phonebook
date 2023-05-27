@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.section`
-display: flex;
-
+  display: flex;
 `;
+
 export const PromtText = styled.span`
   display: flex;
   flex-wrap: wrap;
