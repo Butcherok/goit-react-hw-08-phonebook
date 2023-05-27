@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Navigation } from '../Navigation/Navigation';
 import { AuthNav } from '../AuthNav/AuthNav';
-import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { useAuth } from 'hooks/useAuth';
 import { useMediaQuery } from 'hooks/useMediaQuery';
 import { Container } from 'components/App.styled';
 import { Header } from './Header.styled';
+import { MobileMenu } from 'components/MobileMenu/MobileMenu';
 
 export default function AppNavBar() {
   const { isLoggedIn } = useAuth();

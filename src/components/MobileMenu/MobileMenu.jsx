@@ -1,18 +1,18 @@
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/MenuSharp';
+import { useState } from 'react';
+import { MenuBtn, MenuItem } from './MobileMenu.styled';
+import { MobileNav } from 'components/MobileNav/MobileNav';
 
 export const MobileMenu = () => {
+  const [menuShown, setMenuShown] = useState(false);
+
+  const toggleMenu = () => setMenuShown(!menuShown);
+
   return (
     <>
-      <IconButton
-        size="large"
-        edge="start"
-        color="inherit"
-        aria-label="menu"
-        sx={{display: {sm: "none"} ,mr: 2 }}
-      >
-        <MenuIcon />
-      </IconButton>
+      <MenuBtn type="button" data-menu-open={menuShown} onClick={toggleMenu}>
+        <MenuItem></MenuItem>
+      </MenuBtn>
+      {menuShown && <MobileNav closeMenu={toggleMenu} />}
     </>
   );
 };
