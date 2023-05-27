@@ -44,11 +44,11 @@ export const AuthItem = styled(NavLink)`
 
   :hover,
   :focus {
-    color: lightgreen;
+    color: tomato;
   }
 
   &.active {
-    color: lightgreen;
+    color: tomato;
 
     &::after {
       transform: scaleX(1);

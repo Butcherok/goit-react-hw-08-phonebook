@@ -142,9 +142,9 @@ export const ShowPassBtn = styled.button`
   width: 33px;
   height: 33px;
 
-  background-color: transparent;
+  background-color: lightblue;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 2px solid rgba(255, 255, 255, 0.7);
   border-radius: 7px;
 
   transition: border 250ms ease-in-out;

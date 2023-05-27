@@ -18,8 +18,8 @@ import {
 import { PromtLink, PromtText } from 'components/SignUpForm/SignUpForm.styled';
 
 const initialValues = {
-  email: 'user-mail@domain.com',
-  password: 'User-pass-123',
+  email: '',
+  password: '',
 };
 
 export const LoginForm = () => {
